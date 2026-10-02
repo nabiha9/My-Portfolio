@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nabiha Sohail | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;600&display=swap">
+<style>
+:root{
+  --bg:#EFE9FF; --ink:#1F1535; --card:#FFFFFF; --pink:#FF5C93; --yellow:#FFD23F; --mint:#5CE0B8; --blue:#6C8CFF;
+  --shadow:#1F1535;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#17102B;--ink:#F6F1FF;--card:#241A44;--shadow:#000;}
+}
+:root[data-theme="dark"]{--bg:#17102B;--ink:#F6F1FF;--card:#241A44;--shadow:#000;}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Figtree',system-ui,sans-serif;font-size:17px;line-height:1.55;overflow-x:hidden;min-height:100%}
+h1,h2,h3{font-family:'Bricolage Grotesque','Trebuchet MS',sans-serif;line-height:1.05;margin:0}
+.wrap{max-width:980px;margin:0 auto;padding:20px 20px 60px}
+nav{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:34px}
+.logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;margin-right:auto;display:flex;align-items:center;gap:8px}
+.logo i{display:inline-block;width:26px;height:26px;background:var(--pink);border:3px solid var(--ink);border-radius:50% 50% 50% 8px;transform:rotate(-12deg)}
+.tab,.theme{font:600 15px 'Figtree',sans-serif;color:var(--ink);background:var(--card);border:3px solid var(--ink);border-radius:999px;padding:8px 18px;cursor:pointer;box-shadow:3px 3px 0 var(--shadow);transition:transform .12s,box-shadow .12s}
+.tab:hover,.theme:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--shadow)}
+.tab[aria-selected="true"]{background:var(--yellow);color:#1F1535;transform:translate(2px,2px);box-shadow:1px 1px 0 var(--shadow)}
+:focus-visible{outline:4px solid var(--blue);outline-offset:3px}
+.page{display:none}
+.page.on{display:block;animation:pop .35s cubic-bezier(.2,1.4,.4,1)}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+/* hero */
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:34px;align-items:center}
+.hi{display:inline-block;background:var(--mint);color:#1F1535;border:3px solid var(--ink);border-radius:14px;padding:4px 14px;font-weight:600;transform:rotate(-3deg);box-shadow:3px 3px 0 var(--shadow);margin-bottom:18px}
+h1{font-size:clamp(46px,9vw,92px);font-weight:800;letter-spacing:-.03em}
+h1 span{display:inline-block;background:var(--pink);color:#1F1535;padding:0 .14em;border:4px solid var(--ink);border-radius:18px;transform:rotate(-2deg);box-shadow:5px 5px 0 var(--shadow)}
+.role{font-size:20px;margin:22px 0 8px;min-height:2.6em}
+.role b{background:linear-gradient(transparent 55%,var(--yellow) 55%);color:var(--ink)}
+.caret{display:inline-block;width:3px;height:1em;background:var(--ink);vertical-align:-2px;margin-left:2px;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.btn{font:700 16px 'Figtree',sans-serif;text-decoration:none;color:#1F1535;background:var(--yellow);border:3px solid var(--ink);border-radius:14px;padding:11px 20px;cursor:pointer;box-shadow:4px 4px 0 var(--shadow);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--shadow)}
+.btn.alt{background:var(--card);color:var(--ink)}
+/* sticker stack */
+.stack{position:relative;height:340px}
+.sticker{position:absolute;border:3px solid var(--ink);border-radius:22px;padding:16px 18px;box-shadow:6px 6px 0 var(--shadow);color:#1F1535;font-weight:600;cursor:grab;user-select:none;touch-action:none}
+.sticker h3{font-size:30px}
+.s1{background:var(--blue);top:6px;left:6%;transform:rotate(-6deg);width:70%}
+.s2{background:var(--yellow);top:118px;right:0;transform:rotate(5deg);width:66%}
+.s3{background:var(--mint);top:226px;left:4%;transform:rotate(-3deg);width:72%}
+.tip{font-size:14px;opacity:.75;margin-top:10px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-top:46px}
+.fact{background:var(--card);border:3px solid var(--ink);border-radius:20px;padding:18px;box-shadow:5px 5px 0 var(--shadow)}
+.fact h3{font-size:22px;margin-bottom:6px}
+/* section titles */
+.title{font-size:clamp(38px,7vw,64px);font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+.title em{font-style:normal;background:var(--pink);color:#1F1535;padding:0 .12em;border-radius:12px;border:3px solid var(--ink)}
+.sub{margin:0 0 28px;max-width:56ch}
+/* education */
+.path{position:relative;padding-left:34px;display:grid;gap:22px}
+.path::before{content:"";position:absolute;left:11px;top:6px;bottom:6px;border-left:5px dashed var(--ink)}
+.stop{position:relative;background:var(--card);border:3px solid var(--ink);border-radius:20px;padding:20px 22px;box-shadow:6px 6px 0 var(--shadow)}
+.stop::before{content:"";position:absolute;left:-34px;top:24px;width:24px;height:24px;border-radius:50%;border:4px solid var(--ink);background:var(--mint)}
+.stop.now::before{background:var(--pink);animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.25)}}
+.stop h3{font-size:25px}
+.when{display:inline-block;background:var(--yellow);color:#1F1535;border:2px solid var(--ink);border-radius:999px;padding:1px 12px;font-weight:600;font-size:14px;margin:8px 0}
+.gpa{display:flex;align-items:center;gap:14px;margin-top:10px;flex-wrap:wrap}
+.meter{flex:1;min-width:160px;height:18px;border:3px solid var(--ink);border-radius:99px;overflow:hidden;background:var(--bg)}
+.meter div{height:100%;width:0;background:var(--mint);transition:width 1.1s cubic-bezier(.2,.9,.3,1)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{background:var(--bg);border:2px solid var(--ink);border-radius:10px;padding:2px 10px;font-weight:600;font-size:14px}
+/* projects */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.proj{background:var(--card);border:3px solid var(--ink);border-radius:22px;box-shadow:6px 6px 0 var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+.proj .top{padding:22px;border-bottom:3px solid var(--ink);color:#1F1535}
+.proj:nth-child(1) .top{background:var(--blue)}
+.proj:nth-child(2) .top{background:var(--pink)}
+.proj:nth-child(3) .top{background:var(--mint)}
+.proj:nth-child(4) .top{background:var(--yellow)}
+.proj .top h3{font-size:28px}
+.proj .body{padding:18px 22px 22px}
+.proj .cta{margin-top:16px}
+.proj ul{margin:10px 0 0;padding-left:20px}
+.proj button.flip{margin-top:16px}
+.fun{display:none;margin-top:14px;background:var(--bg);border:3px dashed var(--ink);border-radius:14px;padding:12px 14px;font-size:15px}
+.fun.on{display:block;animation:pop .3s}
+.lead{margin-top:34px;background:var(--yellow);color:#1F1535;border:3px solid var(--ink);border-radius:22px;padding:20px 22px;box-shadow:6px 6px 0 var(--shadow)}
+.lead h3{font-size:24px}
+footer{margin-top:48px;font-size:15px;opacity:.85}
+footer a{color:var(--ink);font-weight:600}
+@media (max-width:760px){.hero{grid-template-columns:1fr}.stack{height:320px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav role="tablist" aria-label="Portfolio pages">
+    <span class="logo"><i></i>nabiha.dev</span>
+    <button class="tab" role="tab" aria-selected="true" data-p="home">Hello</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="edu">Education</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="proj">Projects</button>
+    <button class="theme" id="theme" aria-label="Toggle dark mode">Dark mode</button>
+  </nav>
+
+  <!-- HOME -->
+  <section class="page on" id="home">
+    <div class="hero">
+      <div>
+        <span class="hi">Hi, I'm</span>
+        <h1><span>Nabiha</span> Sohail</h1>
+        <p class="role">Computer science student who is <b id="typed"></b><span class="caret"></span></p>
+        <p>I turn ideas into working software, and I like fixing tough bugs and learning new tools along the way.</p>
+        <div class="cta">
+          <button class="btn" data-go="proj">See my projects</button>
+          <a class="btn alt" href="mailto:nabihasohail63@gmail.com">Email me</a>
+        </div>
+      </div>
+      <div class="stack" aria-label="Skill stickers you can drag">
+        <div class="sticker s1"><h3>Python</h3>Java, C/C++, SQL</div>
+        <div class="sticker s2"><h3>Web dev</h3>HTML, CSS, JavaScript</div>
+        <div class="sticker s3"><h3>AI / ML</h3>Teaching code to guess</div>
+      </div>
+    </div>
+    <p class="tip">Tip: drag the stickers around.</p>
+    <div class="facts">
+      <div class="fact"><h3>BS Computer Science</h3>Fatima Jinnah Women University, Rawalpindi</div>
+      <div class="fact"><h3>Vice President</h3>STEM Society at my university</div>
+      <div class="fact"><h3>Find my code</h3><a href="https://github.com/nabiha9" target="_blank" rel="noopener" style="color:inherit;font-weight:600">github.com/nabiha9</a></div>
+      <div class="fact"><h3>Open to</h3>Internships, freelance and entry-level roles</div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="page" id="edu">
+    <h2 class="title">My <em>learning</em> path</h2>
+    <p class="sub">From college prep to a computer science degree, newest stop first.</p>
+    <div class="path">
+      <div class="stop now">
+        <h3>Fatima Jinnah Women University</h3>
+        <div>BS in Computer Science, Rawalpindi</div>
+        <span class="when">Sept 2024 to July 2028 (expected)</span>
+        <div class="gpa"><b>CGPA 3.75 / 4.0</b><div class="meter" role="img" aria-label="CGPA 3.75 out of 4.0"><div data-w="93.75"></div></div></div>
+        <div class="chips"><span class="chip">Python</span><span class="chip">Java</span><span class="chip">C/C++</span><span class="chip">SQL</span><span class="chip">Web development</span></div>
+      </div>
+      <div class="stop">
+        <h3>Fauji Foundation College for Girls</h3>
+        <div>ICS (Intermediate in Computer Science), Rawalpindi</div>
+        <span class="when">Aug 2022 to June 2024</span>
+      </div>
+      <div class="stop">
+        <h3>Divisional Public School and College</h3>
+        <div>Rawalpindi</div>
+      </div>
+    </div>
+    <div class="lead">
+      <h3>Vice President, STEM Society</h3>
+      Leading at Fatima Jinnah Women University since May 2026.
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="page" id="proj">
+    <h2 class="title">Things I <em>built</em></h2>
+    <p class="sub">Four projects so far. Open the code on GitHub or tap "Behind the scenes" on each card.</p>
+    <div class="grid">
+      <article class="proj">
+        <div class="top"><h3>Wedding Hall Management System</h3></div>
+        <div class="body">
+          <div class="chips" style="margin-top:0"><span class="chip">Java</span><span class="chip">SQL</span><span class="chip">GUI</span></div>
+          <ul><li>A wedding hall management system with a clean GUI.</li><li>Stores all customer and booking information in a SQL database.</li></ul>
+          <div class="cta"><a class="btn alt" href="https://github.com/nabiha9/Wedding-Hall-Management-System" target="_blank" rel="noopener">View on GitHub</a><button class="btn alt flip" aria-expanded="false">Behind the scenes</button></div>
+          <div class="fun">A real-world problem turned into software: organized data in, fewer double bookings out.</div>
+        </div>
+      </article>
+      <article class="proj">
+        <div class="top"><h3>Home Price Predictor</h3></div>
+        <div class="body">
+          <div class="chips" style="margin-top:0"><span class="chip">Python</span><span class="chip">AI/ML</span><span class="chip">Jupyter Notebook</span></div>
+          <ul><li>An AI/ML project trained on a dataset of home prices from different areas.</li><li>Estimates the price of a home based on its area, rooms and location.</li></ul>
+          <div class="cta"><a class="btn alt" href="https://github.com/nabiha9/Home_price_predictor_project" target="_blank" rel="noopener">View on GitHub</a><button class="btn alt flip" aria-expanded="false">Behind the scenes</button></div>
+          <div class="fun">The model learns from real listings, then answers the question every buyer asks: what will this cost?</div>
+        </div>
+      </article>
+      <article class="proj">
+        <div class="top"><h3>Quiz Game</h3></div>
+        <div class="body">
+          <div class="chips" style="margin-top:0"><span class="chip">Java</span></div>
+          <ul><li>A quiz game created in Java.</li></ul>
+          <div class="cta"><a class="btn alt" href="https://github.com/nabiha9/QUIZ-GAME" target="_blank" rel="noopener">View on GitHub</a><button class="btn alt flip" aria-expanded="false">Behind the scenes</button></div>
+          <div class="fun">Small game, big lesson: input, logic and feedback working together.</div>
+        </div>
+      </article>
+      <article class="proj">
+        <div class="top"><h3>Tower of Hanoi</h3></div>
+        <div class="body">
+          <div class="chips" style="margin-top:0"><span class="chip">C</span></div>
+          <ul><li>The Tower of Hanoi game logic implemented in C.</li></ul>
+          <div class="cta"><a class="btn alt" href="https://github.com/nabiha9/Tower-of-Hanoi" target="_blank" rel="noopener">View on GitHub</a><button class="btn alt flip" aria-expanded="false">Behind the scenes</button></div>
+          <div class="fun">A classic puzzle for practising recursion and step-by-step problem solving.</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer>Let's talk: <a href="mailto:nabihasohail63@gmail.com">nabihasohail63@gmail.com</a> &nbsp;|&nbsp; <a href="https://github.com/nabiha9" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/nabihasohail-0a00473b3" target="_blank" rel="noopener">LinkedIn</a></footer>
+</div>
+
+<script>
+(function(){
+  var tabs=document.querySelectorAll('.tab'), pages=document.querySelectorAll('.page');
+  function show(id){
+    pages.forEach(function(p){p.classList.toggle('on',p.id===id)});
+    tabs.forEach(function(t){t.setAttribute('aria-selected',t.dataset.p===id)});
+    window.scrollTo(0,0);
+    if(id==='edu'){document.querySelectorAll('.meter div').forEach(function(m){m.style.width='0';requestAnimationFrame(function(){requestAnimationFrame(function(){m.style.width=m.dataset.w+'%'})})})}
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.p)})});
+  document.querySelectorAll('[data-go]').forEach(function(b){b.addEventListener('click',function(){show(b.dataset.go)})});
+  document.querySelectorAll('.flip').forEach(function(b){b.addEventListener('click',function(){
+    var f=b.nextElementSibling,on=f.classList.toggle('on');b.setAttribute('aria-expanded',on);
+  })});
+  // typing
+  var words=['learning something new','building web apps','curious about AI','up for a tough bug'],wi=0,ci=0,del=false,el=document.getElementById('typed');
+  function tick(){
+    var w=words[wi];
+    el.textContent=w.slice(0,ci);
+    if(!del&&ci===w.length){del=true;return setTimeout(tick,1400)}
+    if(del&&ci===0){del=false;wi=(wi+1)%words.length}
+    ci+=del?-1:1;setTimeout(tick,del?35:70);
+  }
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=words[0]}else{tick()}
+  // drag stickers
+  document.querySelectorAll('.sticker').forEach(function(s){
+    var sx,sy,ox=0,oy=0,drag=false,z=1;
+    s.addEventListener('pointerdown',function(e){drag=true;sx=e.clientX-ox;sy=e.clientY-oy;s.setPointerCapture(e.pointerId);s.style.zIndex=++z+10;s.style.cursor='grabbing'});
+    s.addEventListener('pointermove',function(e){if(!drag)return;ox=e.clientX-sx;oy=e.clientY-sy;s.style.translate=ox+'px '+oy+'px'});
+    s.addEventListener('pointerup',function(){drag=false;s.style.cursor='grab'});
+  });
+  // theme
+  var root=document.documentElement,tb=document.getElementById('theme');
+  tb.addEventListener('click',function(){
+    var dark=root.dataset.theme?root.dataset.theme==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme=dark?'light':'dark';tb.textContent=dark?'Dark mode':'Light mode';
+  });
+})();
+</script>
+</body>
+</html>
