@@ -46,12 +46,13 @@ h1 span{display:inline-block;background:var(--pink);color:#1F1535;padding:0 .14e
 .btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--shadow)}
 .btn.alt{background:var(--card);color:var(--ink)}
 /* sticker stack */
-.stack{position:relative;height:340px}
+.stack{position:relative;height:410px}
 .sticker{position:absolute;border:3px solid var(--ink);border-radius:22px;padding:16px 18px;box-shadow:6px 6px 0 var(--shadow);color:#1F1535;font-weight:600;cursor:grab;user-select:none;touch-action:none}
 .sticker h3{font-size:30px}
-.s1{background:var(--blue);top:6px;left:6%;transform:rotate(-6deg);width:70%}
-.s2{background:var(--yellow);top:118px;right:0;transform:rotate(5deg);width:66%}
-.s3{background:var(--mint);top:226px;left:4%;transform:rotate(-3deg);width:72%}
+.s1{background:var(--blue);top:0;left:6%;transform:rotate(-6deg);width:70%}
+.s2{background:var(--yellow);top:98px;right:0;transform:rotate(5deg);width:66%}
+.s3{background:var(--mint);top:196px;left:4%;transform:rotate(-3deg);width:72%}
+.s4{background:var(--pink);top:294px;right:2%;transform:rotate(4deg);width:68%}
 .tip{font-size:14px;opacity:.75;margin-top:10px}
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-top:46px}
 .fact{background:var(--card);border:3px solid var(--ink);border-radius:20px;padding:18px;box-shadow:5px 5px 0 var(--shadow)}
@@ -82,18 +83,17 @@ h1 span{display:inline-block;background:var(--pink);color:#1F1535;padding:0 .14e
 .proj:nth-child(2) .top{background:var(--pink)}
 .proj:nth-child(3) .top{background:var(--mint)}
 .proj:nth-child(4) .top{background:var(--yellow)}
+.proj:nth-child(5) .top{background:var(--pink)}
+.proj:nth-child(6) .top{background:var(--blue)}
 .proj .top h3{font-size:28px}
 .proj .body{padding:18px 22px 22px}
 .proj .cta{margin-top:16px}
 .proj ul{margin:10px 0 0;padding-left:20px}
-.proj button.flip{margin-top:16px}
-.fun{display:none;margin-top:14px;background:var(--bg);border:3px dashed var(--ink);border-radius:14px;padding:12px 14px;font-size:15px}
-.fun.on{display:block;animation:pop .3s}
 .lead{margin-top:34px;background:var(--yellow);color:#1F1535;border:3px solid var(--ink);border-radius:22px;padding:20px 22px;box-shadow:6px 6px 0 var(--shadow)}
 .lead h3{font-size:24px}
 footer{margin-top:48px;font-size:15px;opacity:.85}
 footer a{color:var(--ink);font-weight:600}
-@media (max-width:760px){.hero{grid-template-columns:1fr}.stack{height:320px}}
+@media (max-width:760px){.hero{grid-template-columns:1fr}.stack{height:410px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -124,6 +124,7 @@ footer a{color:var(--ink);font-weight:600}
         <div class="sticker s1"><h3>Python</h3>Java, C/C++, SQL</div>
         <div class="sticker s2"><h3>Web dev</h3>HTML, CSS, JavaScript</div>
         <div class="sticker s3"><h3>AI / ML</h3>Teaching code to guess</div>
+        <div class="sticker s4"><h3>App dev</h3>Flutter, Dart</div>
       </div>
     </div>
     <p class="tip">Tip: drag the stickers around.</p>
@@ -166,15 +167,14 @@ footer a{color:var(--ink);font-weight:600}
   <!-- PROJECTS -->
   <section class="page" id="proj">
     <h2 class="title">Things I <em>built</em></h2>
-    <p class="sub">Four projects so far. Open the code on GitHub or tap "Behind the scenes" on each card.</p>
+    <p class="sub">Six projects so far. Open the code on GitHub from each card.</p>
     <div class="grid">
       <article class="proj">
         <div class="top"><h3>Wedding Hall Management System</h3></div>
         <div class="body">
           <div class="chips" style="margin-top:0"><span class="chip">Java</span><span class="chip">SQL</span><span class="chip">GUI</span></div>
           <ul><li>A wedding hall management system with a clean GUI.</li><li>Stores all customer and booking information in a SQL database.</li></ul>
-          <div class="cta"><a class="btn alt" href="https://github.com/nabiha9/Wedding-Hall-Management-System" target="_blank" rel="noopener">View on GitHub</a><button class="btn alt flip" aria-expanded="false">Behind the scenes</button></div>
-          <div class="fun">A real-world problem turned into software: organized data in, fewer double bookings out.</div>
+          <div class="cta"><a class="btn alt" href="https://github.com/nabiha9/Wedding-Hall-Management-System" target="_blank" rel="noopener">View on GitHub</a></div>
         </div>
       </article>
       <article class="proj">
@@ -182,8 +182,7 @@ footer a{color:var(--ink);font-weight:600}
         <div class="body">
           <div class="chips" style="margin-top:0"><span class="chip">Python</span><span class="chip">AI/ML</span><span class="chip">Jupyter Notebook</span></div>
           <ul><li>An AI/ML project trained on a dataset of home prices from different areas.</li><li>Estimates the price of a home based on its area, rooms and location.</li></ul>
-          <div class="cta"><a class="btn alt" href="https://github.com/nabiha9/Home_price_predictor_project" target="_blank" rel="noopener">View on GitHub</a><button class="btn alt flip" aria-expanded="false">Behind the scenes</button></div>
-          <div class="fun">The model learns from real listings, then answers the question every buyer asks: what will this cost?</div>
+          <div class="cta"><a class="btn alt" href="https://github.com/nabiha9/Home_price_predictor_project" target="_blank" rel="noopener">View on GitHub</a></div>
         </div>
       </article>
       <article class="proj">
@@ -191,8 +190,7 @@ footer a{color:var(--ink);font-weight:600}
         <div class="body">
           <div class="chips" style="margin-top:0"><span class="chip">Java</span></div>
           <ul><li>A quiz game created in Java.</li></ul>
-          <div class="cta"><a class="btn alt" href="https://github.com/nabiha9/QUIZ-GAME" target="_blank" rel="noopener">View on GitHub</a><button class="btn alt flip" aria-expanded="false">Behind the scenes</button></div>
-          <div class="fun">Small game, big lesson: input, logic and feedback working together.</div>
+          <div class="cta"><a class="btn alt" href="https://github.com/nabiha9/QUIZ-GAME" target="_blank" rel="noopener">View on GitHub</a></div>
         </div>
       </article>
       <article class="proj">
@@ -200,14 +198,29 @@ footer a{color:var(--ink);font-weight:600}
         <div class="body">
           <div class="chips" style="margin-top:0"><span class="chip">C</span></div>
           <ul><li>The Tower of Hanoi game logic implemented in C.</li></ul>
-          <div class="cta"><a class="btn alt" href="https://github.com/nabiha9/Tower-of-Hanoi" target="_blank" rel="noopener">View on GitHub</a><button class="btn alt flip" aria-expanded="false">Behind the scenes</button></div>
-          <div class="fun">A classic puzzle for practising recursion and step-by-step problem solving.</div>
+          <div class="cta"><a class="btn alt" href="https://github.com/nabiha9/Tower-of-Hanoi" target="_blank" rel="noopener">View on GitHub</a></div>
+        </div>
+      </article>
+      <article class="proj">
+        <div class="top"><h3>Random Quote Generator</h3></div>
+        <div class="body">
+          <div class="chips" style="margin-top:0"><span class="chip">Flutter</span><span class="chip">Dart</span></div>
+          <ul><li>A Flutter app that shows a random quote each time it opens.</li><li>A "New Quote" button that never repeats the current quote.</li></ul>
+          <div class="cta"><a class="btn alt" href="https://github.com/nabiha9/codealpha_random_quote_generator" target="_blank" rel="noopener">View on GitHub</a></div>
+        </div>
+      </article>
+      <article class="proj">
+        <div class="top"><h3>Flashcard Quiz App</h3></div>
+        <div class="body">
+          <div class="chips" style="margin-top:0"><span class="chip">Flutter</span><span class="chip">Dart</span></div>
+          <ul><li>A study app with a question on the front and the answer on the back.</li><li>Add, edit and delete your own cards, saved on the device.</li></ul>
+          <div class="cta"><a class="btn alt" href="https://github.com/nabiha9/codealpha_flashcard_quiz_app" target="_blank" rel="noopener">View on GitHub</a></div>
         </div>
       </article>
     </div>
   </section>
 
-  <footer>Let's talk: <a href="mailto:nabihasohail63@gmail.com">nabihasohail63@gmail.com</a> &nbsp;|&nbsp; <a href="https://github.com/nabiha9" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/nabihasohail-0a00473b3" target="_blank" rel="noopener">LinkedIn</a></footer>
+  <footer>Let's talk: <a href="mailto:nabihasohail63@gmail.com">nabihasohail63@gmail.com</a> &nbsp;|&nbsp; <a href="https://github.com/nabiha9" target="_blank" rel="noopener">GitHub</a> &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/nabiha-sohail-0a00473b3/" target="_blank" rel="noopener">LinkedIn</a></footer>
 </div>
 
 <script>
@@ -221,9 +234,6 @@ footer a{color:var(--ink);font-weight:600}
   }
   tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.p)})});
   document.querySelectorAll('[data-go]').forEach(function(b){b.addEventListener('click',function(){show(b.dataset.go)})});
-  document.querySelectorAll('.flip').forEach(function(b){b.addEventListener('click',function(){
-    var f=b.nextElementSibling,on=f.classList.toggle('on');b.setAttribute('aria-expanded',on);
-  })});
   // typing
   var words=['learning something new','building web apps','curious about AI','up for a tough bug'],wi=0,ci=0,del=false,el=document.getElementById('typed');
   function tick(){
